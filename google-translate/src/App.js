@@ -28,9 +28,8 @@ const App = () => {
     
     axios.request(options).then(function (response) {
       console.log(response.data);
-      const arrayOfData = Object.keys(response.data.data[1])/*.map( key => response.data.data[key])*/
-      console.log("arrayOfData=>",arrayOfData);
-      // setLanguages(arrayOfData);
+      const arrayOfData = Object.keys(response.data.data).map( key => response.data.data[key])
+      setLanguages(arrayOfData);
     }).catch(function (error) {
       console.error(error);
     })
@@ -38,7 +37,7 @@ const App = () => {
   console.log(`languages`,languages);
 
   useEffect (()=>{
-    getLanguages()   //Callinbg an API called getLanguages
+    getLanguages()   //Calling an API called getLanguages
   },[])
 
   return (

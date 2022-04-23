@@ -42,7 +42,7 @@ textarea {
     border:none;
     resize : none;
     padding: 18px;
-    width: 250px !important; 
+    width: 300px !important; 
     height: 146px;
     border-radius: 10px;
     outline: none;
@@ -63,7 +63,7 @@ textarea {
 
 .select-drop-down .down-arrow svg{
     position:relative;
-    left : 256px;
+    left : 300px;
     top:-33px;
     width:26px;
     height:26px;
@@ -71,11 +71,85 @@ textarea {
 }
 
 .arrow-container {
-    padding: 20px;
+    padding: 10px;
 }
 
 .arrow-container svg {
     width:26px;
     height:26px;
     fill : #5a5a5d
+}
+
+.option-list{
+    width:100%;
+}
+
+.search-bar{
+    width:100%;
+    display:flex;
+    justify-content: center;
+    padding:10px;
+}
+
+.search-bar input{
+    background: url(https://www.gstatic.com/images/icons/material/system/2x/search_grey600_24dp.png) right 8px center no-repeat;
+    background-size: 24px 24px;
+    padding-left: 16px;
+    padding-right: 46px;
+    width:100% !important;
+}
+
+.search-bar .close-button svg{
+    width: 30px;
+    height: 30px;
+    padding:5px;
+    fill: #5a5a5d
+}
+
+.option-container{
+    width: 250px;
+    overflow: auto;
+}
+
+.option-list ul{
+    margin:15px;
+    padding:0;
+    height:1300px;
+    display:flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+}
+
+.option-list li{
+    color:#bdc1c6;
+    font-size:14px;
+    padding:10px;
+    list-style-type: none;
+    border-radius: 4px;
+}
+
+.option-list li:hover{
+    background-color:#5a5a5d;
+}
+
+.list-item{
+    display: flex;
+}
+
+.list-item .icon{
+    padding: 8px;
+    width: 11px;
+    color:#8ab4f8;
+}
+
+.button-container{
+    color:#bdc1c6;
+    padding: 10px;
+}
+.input .delete{
+    position: relative;
+    left:280px;
+    top:-200px;
+    font-size:60px;
+    color: #bdc1c6;
 }

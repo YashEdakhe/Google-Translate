@@ -1,17 +1,22 @@
 import { useState } from "react";
 
-const Modal = ({ setShowModal,languages }) => {
+const Modal = ({ setShowModal, languages, chosenLanguage, setChosenLanguage }) => {
   const [searchedLanguage, setSearchedLanguage] = useState("");
 
-  const filteredLanguages = languages.filter(()=> languages.toLowerCase().startsWith(searchedLanguage.toLowerCase());
+  const filteredLanguages = languages.filter((language) => language.toLowerCase().startsWith(searchedLanguage.toLowerCase()));
 
   const handleChange = (e) => {
     setSearchedLanguage(e.target.value);
   };
-  console.log(searchedLanguage);
+
+  const handleClick = (e) => {
+    setChosenLanguage(e.target.textContent);
+    setShowModal(null);
+  }
+
   return (
-    <div className="optionList">
-      <div className="searchBar">
+    <div className="option-list">
+      <div className="search-bar">
         <input value={searchedLanguage} onChange={handleChange} />
         <div className="close-button" onClick={() => setShowModal(null)}>
           <svg
@@ -23,9 +28,22 @@ const Modal = ({ setShowModal,languages }) => {
           </svg>
         </div>
       </div>
-      <div class="option-container">
+      <div className="option-container">
         <ul>
-          
+          {filteredLanguages?.map((filteredLanguage, _index) => {
+            <div className="list-item">
+              <div className="icon">
+                {chosenLanguage === filteredLanguage ? '✓' : ''}
+              </div>
+              <li
+                key={_index}
+                onClick={handleClick}
+                style={{color: chosenLanguage === filteredLanguage ? `#8ab4a8` : null}}
+              >
+              {filteredLanguage}
+              </li>
+            </div>;
+          })}
         </ul>
       </div>
     </div>
